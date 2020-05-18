@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap/Bootswatch CSS -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+  <title>Belly Button Biodiversity</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron text-center p-1 mt-3">
+      <h1><strong>Belly Button Biodiversity<br>Dashboard</strong></h1>
+      <p class="mt-3">Use the interactive charts below to explore the dataset<p>
+    </div>
+    
+    <div class="row mt-2" id="first-row">
+      <select class="custom-select col-md-2 mx-auto" id="selDataset" onchange="optionChanged(this.value)">
+      </select>
+    </div><!-- /first-row -->
+
+    <div class="row mt-3 mx-auto" id="second-row">      
+      <div class="card text-white bg-secondary pb-0" style="max-width: 20rem;">
+        <div class="card-header">Sample Metadata</div>
+        <div class="card-body">
+          <p id="metadata-text">
+          </p>
+        </div>   
+      </div><!-- /card -->
+
+      <div class = "col-md-9 " id = "pie-chart">
+      </div>
+
+    </div><!-- /second-row -->
+
+    <div class="row" id="third-row">
+      <div class = "col-md-12 " id = "bubble-chart">
+      </div>
+    </div><!-- /third-row -->
+  </div>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='plots.js') }}"></script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
